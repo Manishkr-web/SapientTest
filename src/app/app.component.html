@@ -1,0 +1,48 @@
+<form>
+<hello name="{{ name }}"></hello>
+<!--<p>
+{{spaceXdata | json}}
+</p>-->
+<div class="container">
+    <div class="row">
+        <div class="col-25">
+          <label for="lname">Lunch Year</label>
+        </div>
+        <div class="col-70">
+<input class="center" type="text" id="lname" name="launches" [(ngModel)]="launches" placeholder="lunch">
+<button type="button" (click)="getData();">Click</button>   
+</div>
+</div>
+</div>
+</form>
+
+<br>
+<table>
+    <tr *ngFor="let l of launches">
+        <td>{{l.flight_number}}</td>
+       
+    </tr>
+</table>
+<table border="1" align="center" class="center">
+	<thead>
+        <tr>
+            <th>Flight Number</th>
+            <th>Mission Name</th>
+            <th>Mission Id</th>
+            <th>Lunch Year</th>
+            <th>Misson Success</th>
+            <th>Mission Logo</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let l of spaceXdata">
+                    <td>{{l.flight_number}}</td>
+                    <td>{{l.mission_name}}</td>
+                    <td>{{l.mission_id}}</td>
+                    <td>{{l.launch_year}}</td>
+                    <td>{{l.launch_success}}</td>
+                    
+                    <td><img src="assets\image\space.png" alt="image" class="center"></td>
+                </tr>
+            </tbody>
+            </table>
